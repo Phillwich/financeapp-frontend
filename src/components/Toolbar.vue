@@ -4,7 +4,7 @@
             <v-toolbar-title @click="pushMe('/')">FinanceApp</v-toolbar-title>
             <v-spacer></v-spacer>
             <div v-if="!isLoggedIn" class="pr-2">
-                <v-btn @click="pushMe('/auth/login')">Loggin</v-btn>
+                <v-btn @click="pushMe('/auth/login')">Login</v-btn>
             </div>
             <div v-if="!isLoggedIn">
                 <v-btn @click="pushMe('/auth/register')">Sign up</v-btn>
