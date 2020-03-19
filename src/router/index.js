@@ -7,11 +7,22 @@ import store from '../store'
 
 Vue.use(VueRouter)
 
+const checkSession = (to, from, next) => {
+  if (to.name === 'Overview') {
+    if(!store.state.userToken) {
+      next({ name: 'Login' })
+    }
+  }
+  next()
+}
+
+
 const routes = [
   {
     path: '/overview/:userId',
     name: 'Overview',
-    component: Overview
+    component: Overview,
+    beforeEnter: checkSession
   },
   {
     path: '/auth/login',

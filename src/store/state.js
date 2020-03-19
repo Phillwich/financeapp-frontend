@@ -9,5 +9,6 @@ export default {
     },
     notificationMessage: null,
     notificationType: null,
-    token: null
+    userToken: null,
+    isLoggedIn: false
 }

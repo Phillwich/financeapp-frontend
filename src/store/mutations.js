@@ -18,12 +18,14 @@ export default {
         state.notificationType = payload
     },
 
-    setToken: (state, payload) => {
-        state.token = payload
+    removeToken: (state) => {
+        state.userToken = null
+        state.isLoggedIn = false
     },
 
-    removeToken: (state) => {
-        state.token = null
+    setToken: (state, payload) => {
+        state.userToken = payload
+        state.isLoggedIn = true
     }
 
 }

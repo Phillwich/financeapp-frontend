@@ -25,7 +25,8 @@ export default {
         ...mapState(['user'])
     },
     async mounted() {
-        this.$store.dispatch('getUserData', this.$route.params.userId)
+        const response = await this.$store.dispatch('getUserData', this.$route.params.userId)
+        if (!response.success) this.$router.push('/auth/login')
     }
 }
 </script>

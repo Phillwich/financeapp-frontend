@@ -16,9 +16,9 @@ const postRequest = async (url, payload) => {
     }
 }
 
-const getRequest = async (url, payload) => {
+const getRequest = async (url, headers) => {
     try {
-        const response = await axios.get(url)
+        const response = await axios.get(url, { headers: { 'x-access-token': headers ? headers : '' } })
         return {
             success: true,
             data: response.data
@@ -31,9 +31,9 @@ const getRequest = async (url, payload) => {
     }
 }
 
-const putRequest = async (url, payload) => {
+const putRequest = async (url, payload, headers) => {
     try {
-        const response = await axios.put(url, payload)
+        const response = await axios.put(url, payload, { headers: { 'x-access-token': headers ? headers : '' } })
         return {
             success: true,
             data: response.data
