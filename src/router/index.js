@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Overview from '@/views/Overview.vue'
 import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
+import Home from '@/views/Home.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -18,6 +19,11 @@ const checkSession = (to, from, next) => {
 
 
 const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
   {
     path: '/overview/:userId',
     name: 'Overview',
