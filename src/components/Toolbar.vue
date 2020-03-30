@@ -1,19 +1,19 @@
 <template>
     <v-container fluid>
-        <v-toolbar>
-            <v-toolbar-title @click="pushMe('/')">FinanceApp</v-toolbar-title>
+        <v-toolbar height="15vh" flat>
+            <v-toolbar-title class="logo" @click="pushMe('/')">FinanceApp</v-toolbar-title>
             <v-spacer></v-spacer>
             <div v-if="!isLoggedIn" class="pr-2">
-                <v-btn @click="pushMe('/auth/login')">Login</v-btn>
+                <v-btn text @click="pushMe('/auth/login')">Login</v-btn>
             </div>
             <div v-if="!isLoggedIn">
-                <v-btn @click="pushMe('/auth/register')">Sign up</v-btn>
+                <v-btn text @click="pushMe('/auth/register')">Sign up</v-btn>
             </div>
             <div class="pr-2" v-if="isLoggedIn">
-                <v-btn @click="pushMe('/overview')">My Overview</v-btn>
+                <v-btn text @click="pushMe('/overview')">My Overview</v-btn>
             </div>
             <div v-if="isLoggedIn">
-                <v-btn @click="Logout()">Log out</v-btn>
+                <v-btn text @click="Logout()">Log out</v-btn>
             </div>
         </v-toolbar>
     </v-container>
@@ -40,3 +40,10 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.logo:hover {
+    cursor: pointer;
+}
+
+</style>

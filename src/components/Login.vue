@@ -11,9 +11,6 @@
           <v-row class="pb-2">
             <v-btn block @click="login()">Login</v-btn>
           </v-row>
-          <v-row>
-            <v-btn block @click="pushMe('/auth/register')">Sign up</v-btn>
-          </v-row>
         </v-col>
       </v-card-actions>
     </v-card>
@@ -22,7 +19,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import Vue from 'vue'
+import Vue from "vue";
 export default {
   data() {
     return {

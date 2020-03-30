@@ -8,7 +8,7 @@ import { mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {
-      color: '#35682d',
+      color: 'green',
       notification: false
     };
   },
@@ -25,7 +25,7 @@ export default {
     notificationMessage(value) {
       if (value !== null) {
         this.notification = true
-        if (this.notificationType === 'error') this.color = '#fa0000'
+        if (this.notificationType === 'error') this.color = 'red'
         setTimeout(() => {
           this.removeNotification()
         }, 7000)
